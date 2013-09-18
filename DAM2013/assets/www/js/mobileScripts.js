@@ -175,7 +175,13 @@ function enableDisableVotings(data) {
         /* Vortrag */
         vortrag = data[i];
         console.log("enableDisableVotings:" + vortrag.vtitel + " ist aktiv " + vortrag.aktiv );
+console.log("start test ");
         if (vortrag.aktiv == 1) {
+		debugger
+		$('#votingZiel').find('#slider-fill_' + i + "_3").trigger('create');
+		$('#slider-fill_' + i + "_3").slider();
+		$('#slider-fill_' + i + "_3").textinput();
+		$('#slider-fill_' + i + "_3").trigger('create');
             $('#vortragWrapper_' + i + " h4").html(vortrag.vautor  + ": " + vortrag.vtitel);
             // keine Punkte bisher vergeben
             if (vortrag.eigenePunkte.length == 0) {
@@ -236,7 +242,7 @@ function enableDisableVotings(data) {
             }
         }
     }
-	$('.dummywrapper').trigger("create");
+	
 }
 
 function bewerten(theid) {
