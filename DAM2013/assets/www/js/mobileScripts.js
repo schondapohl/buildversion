@@ -236,6 +236,7 @@ function enableDisableVotings(data) {
             }
         }
     }
+	$('.dummywrapper').trigger("create");
 }
 
 function bewerten(theid) {
