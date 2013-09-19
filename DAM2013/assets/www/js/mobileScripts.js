@@ -171,17 +171,21 @@ function enableDisableVotings(data) {
         votingBlock = votingBlock.replace("K2",data[0].kzwei);
         votingBlock = votingBlock.replace("K3",data[0].kdrei);
         var ziel = $('#votingZiel').html();
-        $('#votingZiel').html(ziel + votingBlock);
+		var testhtml  = "<div id='aussen'><div>Kategorie 1</div><input type=range min=1 max=50 value=10 id='#slider-fill_0_3'></div>";
+		$('#votingZiel').append(votingBlock);
+        $('#slider-fill_0_1').val(5).slider();
+        $('#o_slider_0_1 ').children().eq(1).children().eq(1).hide();
+        $('#slider-fill_0_2').val(5).slider();
+        $('#o_slider_0_2 ').children().eq(1).children().eq(1).hide();
+        $('#slider-fill_0_3').val(5).slider();
+        $('#o_slider_0_3 ').children().eq(1).children().eq(1).hide();
         /* Vortrag */
         vortrag = data[i];
         console.log("enableDisableVotings:" + vortrag.vtitel + " ist aktiv " + vortrag.aktiv );
 console.log("start test ");
         if (vortrag.aktiv == 1) {
-		debugger
-		$('#votingZiel').find('#slider-fill_' + i + "_3").trigger('create');
-		$('#slider-fill_' + i + "_3").slider();
-		$('#slider-fill_' + i + "_3").textinput();
-		$('#slider-fill_' + i + "_3").trigger('create');
+		
+			
             $('#vortragWrapper_' + i + " h4").html(vortrag.vautor  + ": " + vortrag.vtitel);
             // keine Punkte bisher vergeben
             if (vortrag.eigenePunkte.length == 0) {
@@ -242,7 +246,8 @@ console.log("start test ");
             }
         }
     }
-	
+
+
 }
 
 function bewerten(theid) {
