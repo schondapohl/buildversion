@@ -303,6 +303,35 @@ function waslaeuftjetzt() {
     });
 }
 
+function showMenue()
+{
+    $('#menuContainer').toggle('slow');
+}
+
+function exitApp()
+{
+    console.log("Exit App");
+    if(navigator.app){
+        navigator.app.exitApp();
+    }else if(navigator.device){
+        navigator.device.exitApp();
+    }
+    else
+    {
+        alert("Sie können die Anwendung verlassen/minimieren");
+    }
+}
+
+function zeigeImpressum()
+{
+    $('#impressumDiv').removeClass('hidden visibleImpressumDiv').addClass('visibleImpressumDiv');
+}
+
+function schliesseImpressum()
+{
+    $('#impressumDiv').removeClass('hidden visibleImpressumDiv').addClass('hidden');
+}
+
 /**
  * Für die Anzeige der jeweiligen Benutzer zuständig
  * Login oder Logout
